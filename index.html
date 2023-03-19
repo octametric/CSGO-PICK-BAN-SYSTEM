@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CsGoPicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="map-container" data-map="inferno" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Inferno</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="mirage" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Mirage</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="nuke" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Nuke</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="overpass" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Overpass</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="anubis" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Anubis</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="vertigo" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Vertigo</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" data-map="ancient" onclick="ban(this)">
+            <div class="background-image"></div>
+            <div class="content">
+                <div class="content-header">Ancient</div>
+                <div class="content-body">
+                    <div class="text">
+                        Ban
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ban(e) {
+            $(e).children(".content").toggleClass("banned");
+            $(e).children(".content").children(".content-body").toggleClass("show");
+        }
+
+        $(document).ready(function () {
+            $(".map-container").each(function () {
+                var mapName = $(this).data('map');
+                $(this).children(".background-image").css("background-image", "url('./assets/" + mapName + ".jpg')");
+            });
+        });
+    </script>
+</body>
+
+</html>
